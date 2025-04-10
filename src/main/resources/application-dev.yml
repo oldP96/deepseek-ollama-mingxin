@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+
+spring:
+  datasource:                                 # 数据源相关配置
+    type: com.zaxxer.hikari.HikariDataSource  # 数据源的类型，也可以选择druid
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/deepseek_doctor?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      connection-timeout: 30000   # 连接超时，默认30s 等待连接分配，超过这个时间会抛出异常 SqlException
+      idle-timeout: 60000
+      pool-name: DataSourceHikariCP  # 连接池名字
+      minimum-idle: 5                # 最小连接数
+      maximum-pool-size: 10          # 最大连接数
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+      auto-commit: true
