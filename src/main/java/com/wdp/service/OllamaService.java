@@ -12,5 +12,5 @@ public interface OllamaService {
 
     List<String> aiOllamaStream(String msg);
 
-    void aiOllamaDoctor(String username,String msg);
+    void aiOllamaMingxin(String username,String msg);
 }

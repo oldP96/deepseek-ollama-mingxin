@@ -50,7 +50,7 @@ public class OllamaServiceImpl implements OllamaService {
     }
 
     @Override
-    public void aiOllamaDoctor(String username, String msg) {
+    public void aiOllamaMingxin(String username, String msg) {
         // 保存用户发送的消息
         chatRecordService.saveChatRecord(username, msg, ChatType.USER);
         Prompt prompt = new Prompt(new UserMessage(msg));

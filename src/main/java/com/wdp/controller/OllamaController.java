@@ -36,11 +36,11 @@ public class OllamaController {
     }
 
     @PostMapping("ai/mingxin")
-    public void aiOllamaDoctor(@RequestBody ChatBean chatBean) {
+    public void aiOllamaMingxin(@RequestBody ChatBean chatBean) {
         log.info(chatBean.toString());
         String currentUserName = chatBean.getCurrentUserName();
         String msg = chatBean.getMessage();
-        ollamaService.aiOllamaDoctor(currentUserName, msg);
+        ollamaService.aiOllamaMingxin(currentUserName, msg);
     }
 
     @GetMapping("ai/getRecords")
